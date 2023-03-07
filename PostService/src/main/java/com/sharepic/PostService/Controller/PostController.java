@@ -90,13 +90,20 @@ private static final Logger LOGGER = LoggerFactory.getLogger(PostController.clas
 	
 	
 	@GetMapping("/showData")
-	public List<PostedContent> getFiles(@RequestParam("user_name")String name){
+	public List<PostedContent> getFiles(@RequestHeader(name = "user_name")String name){
 	    // code that uses the language variable
 		//String dto = postService.uploadFiles(files, name);
 		List <PostedContent> postData =postService.getPostUrl(name);
 		
 		
 		return postData;
+	    
+	}
+	
+
+	@GetMapping("/greet")
+	public String greet(){
+	    return "Hello User";
 	    
 	}
 

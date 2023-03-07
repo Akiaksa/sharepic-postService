@@ -21,6 +21,7 @@ public class PostedContentMapper {
 		obj.setPostedDate(new Date());
 		obj.setPostName(file.getFileName());
 		obj.setUser_id(user.getId());
+		obj.setFirebase_uid(user.getPassword());
 		obj.setLikes(0);
 		
 		return obj;

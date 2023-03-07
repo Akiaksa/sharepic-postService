@@ -20,7 +20,10 @@ public class PostedContent {
 	private Integer id;
 	
 	@Column(name = "user_id" )
-	private Integer user_id;
+	private int user_id;
+	
+	@Column(name = "uid" )
+	private String firebase_uid ;
 	
 	@Column(name = "content_type" ,  nullable = false, length = 100 )
 	private String contentType;
@@ -55,12 +58,21 @@ public class PostedContent {
 	}
 
 
-	public Integer getUser_id() {
+
+	public int getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(Integer user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
+	}
+
+	public String getFirebase_uid() {
+		return firebase_uid;
+	}
+
+	public void setFirebase_uid(String firebase_uid) {
+		this.firebase_uid = firebase_uid;
 	}
 
 	public String getPostName() {
